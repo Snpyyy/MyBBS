@@ -15,8 +15,8 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('user', 64);
-            $table->string('text', 1000);
+            $table->string('name', 64);
+            $table->string('body', 1000);
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bbs');
+        Schema::dropIfExists('posts');
     }
 }

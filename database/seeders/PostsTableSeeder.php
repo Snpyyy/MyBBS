@@ -20,8 +20,8 @@ class PostsTableSeeder extends Seeder
 
         foreach ($users as $user) {
             DB::table('posts')->insert([
-                'user' => $user,
-                'text' => Str::random(10),
+                'name' => $user,
+                'body' => Str::random(10),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);

@@ -20,6 +20,11 @@ class BbsController extends Controller
 
     public function create(Request $request)
     {
+        $validated = $request->validate([
+            'name' => 'required | max:10',
+            'body' => 'required',
+        ]);
+
         $post = new Post();
         $post->name = $request->name;
         $post->body = $request->body;

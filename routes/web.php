@@ -14,4 +14,6 @@ use App\Http\Controllers\BbsController;
 |
 */
 
-Route::get('/', [BbsController::class, 'index']);
+Route::get('/', [BbsController::class, 'index'])->name('index');
+Route::get('/create', [BbsController::class, 'showCreateForm']);
+Route::post('/create', [BbsController::class, 'create']);

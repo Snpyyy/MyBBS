@@ -12,4 +12,19 @@ class BbsController extends Controller
         $posts = Post::all();
         return view('index', compact('posts'));
     }
+
+    public function showCreateForm()
+    {
+        return view('create');
+    }
+
+    public function create(Request $request)
+    {
+        $post = new Post();
+        $post->name = $request->name;
+        $post->body = $request->body;
+        $post->save();
+
+        return redirect()->route('index');
+    }
 }

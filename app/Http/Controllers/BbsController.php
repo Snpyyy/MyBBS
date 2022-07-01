@@ -10,12 +10,12 @@ class BbsController extends Controller
     public function index()
     {
         $posts = Post::orderBy('id', 'desc')->get();
-        return view('index', compact('posts'));
+        return view('pages/index', compact('posts'));
     }
 
     public function showCreateForm()
     {
-        return view('create');
+        return view('pages/create');
     }
 
     public function create(Request $request)

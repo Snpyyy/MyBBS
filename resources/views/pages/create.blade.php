@@ -5,6 +5,15 @@
 @section('content')
 <div class="container">
     <div class="w-50 mx-auto bg-white p-2 shadow-sm">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul class="mb-0">
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="" method="post">
             @csrf
             <div class="mb-3">

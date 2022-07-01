@@ -3,20 +3,19 @@
 @section('title', '投稿画面')
 
 @section('content')
-<div>
-    <h3>投稿機能</h3>
-    <div>
+<div class="container">
+    <div class="w-50 mx-auto bg-white p-2 shadow-sm">
         <form action="" method="post">
             @csrf
-            <div>
-                <label for="name">投稿者</label>
-                <input type="text" name="name" id="name">
+            <div class="mb-3">
+                <label for="name" class="form-label">投稿者</label>
+                <input type="text" class="form-control form-control-sm" name="name" id="name">
             </div>
-            <div>
-                <label for="body">本文</label>
-                <textarea name="body" id="body"></textarea>
+            <div class="mb-3">
+                <label for="body" class="form-label">本文</label>
+                <textarea class="form-control" name="body" id="body"></textarea>
             </div>
-            <input type="submit" value="投稿">
+            <input type="submit" class="form-control bg-primary text-light" value="投稿">
         </form>
     </div>
 </div>

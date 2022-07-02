@@ -15,5 +15,10 @@ use App\Http\Controllers\BbsController;
 */
 
 Route::get('/', [BbsController::class, 'index'])->name('index');
-Route::get('/create', [BbsController::class, 'showCreateForm']);
-Route::post('/create', [BbsController::class, 'create']);
+Route::get('/create/{id}', [BbsController::class, 'showCreateForm'])->name('create');
+Route::post('/create{id}', [BbsController::class, 'create']);
+
+Route::get('/edit/{id}', [BbsController::class, 'showEditFrom'])->name('edit');
+Route::post('/edit/{id}', [BbsController::class, 'edit']);
+
+// Route::get('/delete', [BbsController::class, 'delete']);

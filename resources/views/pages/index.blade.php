@@ -13,7 +13,7 @@
                 </div>
                 <div>
                     <a href="{{ route('edit', ['id' => $post->id]) }}">編集</a>
-                    <a href="">削除</a>
+                    <a href="{{ route('delete', ['id' => $post->id]) }}">削除</a>
                 </div>
             </div>
             <div>

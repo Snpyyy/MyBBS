@@ -12,13 +12,14 @@
                     <p>投稿日時: {{ $post->formatted_date }}</p>
                 </div>
                 <div>
-                    <a href="{{ route('edit', ['id' => $post->id]) }}">編集</a>
-                    <a href="{{ route('delete', ['id' => $post->id]) }}">削除</a>
+                    <a href="{{ route('edit', ['id' => $post->id]) }}" class="btn btn-primary">編集</a>
+                    <a href="{{ route('delete', ['id' => $post->id]) }}" class="btn btn-danger">削除</a>
                 </div>
             </div>
             <div>
                 <p class="p-1 bg-light">{!! nl2br(e($post->body)) !!}</p>
             </div>
+            <a href="{{ route('view', ['id' => $post->id]) }} ">返信する</a>
         </div>
     @endforeach
     @if ($posts->isEmpty())

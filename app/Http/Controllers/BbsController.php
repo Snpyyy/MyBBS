@@ -33,4 +33,20 @@ class BbsController extends Controller
 
         return redirect()->route('index');
     }
+
+    public function showEditFrom(Request $request)
+    {
+        $postUser = Post::find($request->id);
+        return view('pages/edit', compact('postUser'));
+    }
+
+    public function edit(int $id, Request $request)
+    {
+        $validated = $request->validate([
+            'body' => 'required',
+        ]);
+
+        Post::where('id', $id)->update(['body' => $request->body]);
+        return redirect()->route('index');
+    }
 }

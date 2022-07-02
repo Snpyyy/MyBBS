@@ -34,10 +34,10 @@ class BbsController extends Controller
         return redirect()->route('index');
     }
 
-    public function showEditFrom(Request $request)
+    public function showEditFrom(int $id)
     {
-        $postUser = Post::find($request->id);
-        return view('pages/edit', compact('postUser'));
+        $post = Post::find($id);
+        return view('pages/edit', compact('post'));
     }
 
     public function edit(int $id, Request $request)
@@ -54,5 +54,11 @@ class BbsController extends Controller
     {
         Post::where('id', $id)->delete();
         return redirect()->route('index');
+    }
+
+    public function view(int $id)
+    {
+        $post = Post::find($id);
+        return view('pages/view', compact('post'));
     }
 }

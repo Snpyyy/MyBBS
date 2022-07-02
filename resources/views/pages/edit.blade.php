@@ -14,14 +14,14 @@
             </ul>
         </div>
         @endif
-        <form action="{{ route('edit', ['id' => $postUser->id]) }}" method="POST">
+        <form action="{{ route('edit', ['id' => $post->id]) }}" method="POST">
             @csrf
             <div class="mb-3">
-                <p>投稿者: <span style="font-weight: bold">{{ $postUser->name }}</span></p>
+                <p>投稿者: <span style="font-weight: bold">{{ $post->name }}</span></p>
             </div>
             <div class="mb-3">
                 <label for="body" class="form-label">本文</label>
-                <textarea class="form-control" name="body" id="body">{{ old('body', $postUser->body) }}</textarea>
+                <textarea class="form-control" name="body" id="body">{{ old('body', $post->body) }}</textarea>
             </div>
             <input type="submit" class="form-control bg-primary text-light" value="送信">
         </form>

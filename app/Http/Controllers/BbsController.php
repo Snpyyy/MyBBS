@@ -49,4 +49,10 @@ class BbsController extends Controller
         Post::where('id', $id)->update(['body' => $request->body]);
         return redirect()->route('index');
     }
+
+    public function delete(int $id)
+    {
+        Post::where('id', $id)->delete();
+        return redirect()->route('index');
+    }
 }

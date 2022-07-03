@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 
-class Post extends Model
+class Reply extends Model
 {
     use HasFactory;
 
-    public function replies()
+    public function post()
     {
-        return $this->hasMany(Reply::class);
+        return $this->belongsTo(Post::class);
     }
 
     public function getFormattedDateAttribute()

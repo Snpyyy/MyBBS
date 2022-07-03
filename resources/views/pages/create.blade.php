@@ -14,7 +14,7 @@
                 </ul>
             </div>
         @endif
-        <form action="" method="post">
+        <form action="/create" method="post">
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">投稿者</label>

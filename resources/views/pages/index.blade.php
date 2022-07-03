@@ -11,9 +11,12 @@
                     <p class="me-3">投稿者: <span style="font-weight: bold">{{ $post->name }}</span></p>
                     <p>投稿日時: {{ $post->formatted_date }}</p>
                 </div>
-                <div>
-                    <a href="{{ route('edit', ['id' => $post->id]) }}" class="btn btn-primary">編集</a>
-                    <a href="{{ route('delete', ['id' => $post->id]) }}" class="btn btn-danger">削除</a>
+                <div class="d-flex">
+                    <a href="{{ route('edit', ['id' => $post->id]) }}" class="btn btn-primary me-2">編集</a>
+                    <form action="{{ route('delete', ['id' => $post->id]) }}" method="POST">
+                        @csrf
+                        <input type="submit" class="btn btn-danger h-100 " name="delete" value="削除" onClick="delete_alert(event);return false;">
+                    </form>
                 </div>
             </div>
             <div>

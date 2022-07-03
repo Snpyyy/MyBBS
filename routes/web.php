@@ -21,7 +21,7 @@ Route::post('/create', [BbsController::class, 'create']);
 Route::get('/edit/{id}', [BbsController::class, 'showEditFrom'])->name('edit');
 Route::post('/edit/{id}', [BbsController::class, 'edit']);
 
-Route::get('/delete{id}', [BbsController::class, 'delete'])->name('delete');
+Route::post('/delete{id}', [BbsController::class, 'delete'])->name('delete');
 
 Route::get('/view/{id}', [BbsController::class, 'view'])->name('view');
 Route::post('/view/{id}/create', [BbsController::class, 'replyCreate'])->name('reply');
